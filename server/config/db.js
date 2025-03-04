@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+
+//this method connects to the project's MangoDB database.
 export const connectDB = async () => {
     dotenv.config();
     try {
