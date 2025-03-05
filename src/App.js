@@ -9,6 +9,7 @@ function App() {
   return (
     <AuthContextProvider>
       <div className="App">
+        {/* by default authentic routes */}
         <BrowserRouter>
           <Navbar />
           <div className="pages">
