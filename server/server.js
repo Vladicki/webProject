@@ -22,6 +22,19 @@ app.use('/api/users',userRoutes);
 //requests ending in /api/resumes will be directed to resume CRUD functions
 app.use('/api/resumes',resumeRoutes);
 
+app.get("/connect_db_test_route", async(req, res, next)=>{
+    // await connectDB();
+    console.log("Hello")
+    const user = await User.create({
+        name:"harsh",
+        email:"harsh@gmail.com",
+        password:"awsawsaws"
+    })
+    console.log(User)
+    console.log(user)
+    res.send("<h1>Hello from harsh!</h1>")
+})
+
 //start server
 app.listen(PORT,()=>{
     connectDB();
