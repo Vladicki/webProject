@@ -1,4 +1,7 @@
+
 {
+  "proxy": "http://localhost:5050",
+
   "name": "server",
   "version": "1.0.0",
   "description": "my server for react",
@@ -11,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.8.2",
+    "course": "^0.0.1"
   }
 }

@@ -6,6 +6,8 @@ import User from './models/user.model.js';
 import userRoutes from './routes/users.js';
 import resumeRoutes from './routes/resumes.js';
 
+// import cors from "cors";
+ 
 
 //loads .env file into process.env so that we can use it
 dotenv.config();
@@ -15,7 +17,9 @@ const app = express();
 const PORT = 5050;
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 // requests ending in /api/users will be directed to user-related functions like sign-up and login
 app.use('/api/users',userRoutes);
