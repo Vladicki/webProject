@@ -1,36 +1,35 @@
-import Resume from '../models/resume.model'
+import Resume from '../models/resume.model.js';
 
-// creating resume route
-const creatingResume = async (req,res)=>{
+// Create a new resume
+const createResume = async (req, res) => {
     const {
         userId,
         title,
         summary,
         experience,
         education,
-        customSection_1,
-        customSection_2,
-        customSection_3,
+        customSections,
         fileUrl
-        } = req.body;
+    } = req.body;
+
     try {
-        const resume = await Resume.create({
+        const resume = new Resume({
             userId,
             title,
             summary,
             experience,
             education,
-            customSection_1,
-            customSection_2,
-            customSection_3,
+            customSections,
             fileUrl
         });
-        res.status(200).json({resume,userId})
+        await resume.save();
+        res.status(201).json({ message: "Resume successfully saved", resume });
     } catch (error) {
-        res.status(404).json({error:error.message, resume:req.body})
+        console.error("Error saving resume:", error);
+        res.status(500).json({ error: "Failed to save resume", details: error.message });
     }
-}
+};
 
-export default{
-    
-}
+export default {
+    createResume
+};
