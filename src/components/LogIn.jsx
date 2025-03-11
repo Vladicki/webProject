@@ -60,7 +60,7 @@ const LogIn = () => {
                     handler={handleLogin}  // Fixed: changed from handleSubmit to handleLogin
                     setIsSignUp={setIsSignUp} 
                     setPassword={setPassword} 
-                    setUsername={setUsername} 
+                    setEmail={setEmail} 
                 />
             )}
         </div>
@@ -70,43 +70,104 @@ const LogIn = () => {
 // Login Form Component
 const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
     return (
-        <form onSubmit={handler}>
-            <h2>Log in</h2>
-            <div>
-                <label htmlFor="email">E-mail:</label>
-                <input type="text" onChange={(e) => setEmail(e.target.value)} id="email" name="email" required />
+        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
+            <h2 className="text-2xl font-semibold text-center">Log in</h2>
+            <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail:</label>
+                <input
+                    type="text"
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                />
             </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} id="password" name="password" required />
+            <div className="space-y-2">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    id="password"
+                    name="password"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                />
             </div>
-            <button type="submit">Log in</button>
-            <p>New to CV Builder? <button type="button" onClick={() => setIsSignUp(true)}>Sign up</button></p>
+            <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Log in
+            </button>
+            <p className="text-center text-sm text-gray-600">
+                New to CV Builder? 
+                <button 
+                    type="button" 
+                    onClick={() => setIsSignUp(true)} 
+                    className="text-blue-500 hover:text-blue-700 focus:outline-none">
+                    Sign up
+                </button>
+            </p>
         </form>
     );
 };
 
+
 // Sign-Up Form Component
 const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }) => {
     return (
-        <form onSubmit={handler}>
-            <h2>Sign up</h2>
-            <div>
-                <label htmlFor="username">Username:</label>
-                <input type="text" onChange={(e) => setUsername(e.target.value)} id="username" name="username" required />
+        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold mb-4 text-center">Sign up</h2>
+            <div className="mb-4">
+                <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username:</label>
+                <input
+                    type="text"
+                    onChange={(e) => setUsername(e.target.value)}
+                    id="username"
+                    name="username"
+                    required
+                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
             </div>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" onChange={(e) => setEmail(e.target.value)} id="email" name="email" required />
+            <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
+                <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
             </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} id="password" name="password" required />
+            <div className="mb-4">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    id="password"
+                    name="password"
+                    required
+                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
             </div>
-            <button type="submit">Sign Up</button>
-            <p>Returning user? <button type="button" onClick={() => setIsSignUp(false)}>Log in</button></p>
+            <button
+                type="submit"
+                className="w-full py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
+            >
+                Sign Up
+            </button>
+            <p className="mt-4 text-center text-sm">
+                Returning user?{' '}
+                <button
+                    type="button"
+                    onClick={() => setIsSignUp(false)}
+                    className="text-blue-500 hover:underline"
+                >
+                    Log in
+                </button>
+            </p>
         </form>
     );
 };
+
 
 export default LogIn;
