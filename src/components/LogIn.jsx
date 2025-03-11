@@ -30,10 +30,10 @@ const LogIn = () => {
     // Function to handle login
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log(username, password);
+        console.log(email, password);
         try {
-            const response = await axios.post("http://localhost:400/api/users/login", {
-                username,
+            const response = await axios.post("http://localhost:4000/api/users/login", {
+                email,
                 password
             });
 
@@ -68,13 +68,13 @@ const LogIn = () => {
 };
 
 // Login Form Component
-const LogInForm = ({ handler, setIsSignUp, setUsername, setPassword }) => {
+const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
     return (
         <form onSubmit={handler}>
             <h2>Log in</h2>
             <div>
-                <label htmlFor="username">Username:</label>
-                <input type="text" onChange={(e) => setUsername(e.target.value)} id="username" name="username" required />
+                <label htmlFor="email">E-mail:</label>
+                <input type="text" onChange={(e) => setEmail(e.target.value)} id="email" name="email" required />
             </div>
             <div>
                 <label htmlFor="password">Password:</label>

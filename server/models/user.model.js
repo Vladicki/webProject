@@ -18,6 +18,29 @@ const userSchema = new mongoose.Schema({
 
 },{timestamps:true})
 
+userSchema.statics.logIn = async function (email, password){
+    //first check if the user has provided both an email address and a password
+    if(!email || !password){
+        throw Error('Please fill in all fields');
+    }
+
+    //try to find a user with the email in the database. if there isn't one, then the "user" variable will be null
+    const user = await this.findOne({email});
+    if(!user){
+        throw Error('Incorrect email, please try again');
+    }
+
+    //check the password against the hashed password that's in the database
+    const match = await bcrypt.compare(password, user.password);
+
+    if(!match){
+        throw Error('Incorrect password, please try again');
+    }
+
+    //if everything matches, return the user
+    return user;
+}
+
 userSchema.statics.signUp = async function (name,email,password){
 
     //validation

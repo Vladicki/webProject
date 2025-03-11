@@ -1,7 +1,5 @@
-
 {
   "proxy": "http://localhost:5050",
-
   "name": "server",
   "version": "1.0.0",
   "description": "my server for react",
@@ -17,6 +15,9 @@
   },
   "dependencies": {
     "axios": "^1.8.2",
-    "course": "^0.0.1"
+    "bcrypt": "^5.1.1",
+    "course": "^0.0.1",
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2"
   }
 }
