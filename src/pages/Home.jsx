@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <div className="home">
             {
+            //check if user has logged in 
             user?._id ?  <Dashboard/> : <LogIn/>
             }
         </div>

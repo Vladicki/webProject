@@ -10,6 +10,9 @@ const Navbar = () => {
                 <Link to="/" className="text-white text-2xl font-semibold hover:text-blue-200">
                     Dashboard
                 </Link>
+                <Link to="/resumes" className="text-white text-2xl font-semibold hover:text-blue-200">
+                    My CVs
+                </Link>
                 <div className="flex space-x-6">
                     {
                         user?._id ? ( <button onClick={logout}>Logout</button>) : (
