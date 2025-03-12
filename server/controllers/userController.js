@@ -21,6 +21,7 @@ const loginUser = async (req, res) => {
         res.status(200).json({email,token});
 
     } catch (error) {
+        console.log("error in loggin",error);
         res.status(404).json({ error: error.message, user: req.body })
     }
 }

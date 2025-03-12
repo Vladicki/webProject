@@ -27,6 +27,7 @@ const creatingResume = async (req,res)=>{
         });
         res.status(200).json({resume,userId})
     } catch (error) {
+        console.log("error in creating resume",error);
         res.status(404).json({error:error.message, resume:req.body})
     }
 }
