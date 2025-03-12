@@ -1,13 +1,20 @@
 
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
     const [isSignUp, setIsSignUp] = useState(false);
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const {user, logout} = useAuth()
+
+
+
 
     // Function to handle sign-up
     const handleSignup = async (e) => {
@@ -101,7 +108,7 @@ const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
                 New to CV Builder? 
                 <button 
                     type="button" 
-                    onClick={() => setIsSignUp(true)} 
+                    onClick={() => setIsSignUp(false)} 
                     className="text-blue-500 hover:text-blue-700 focus:outline-none">
                     Sign up
                 </button>
@@ -159,7 +166,7 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
                 Returning user?{' '}
                 <button
                     type="button"
-                    onClick={() => setIsSignUp(false)}
+                    onClick={() => setIsSignUp(true)}
                     className="text-blue-500 hover:underline"
                 >
                     Log in

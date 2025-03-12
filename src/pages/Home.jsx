@@ -3,12 +3,12 @@ import LogIn from "../components/LogIn";
 import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
-    const userAuth = useAuth();
+    const {user, logout} = useAuth();
 
     return (
         <div className="home">
             {
-            userAuth.isLoggedIn ?  <Dashboard/> : <LogIn/>
+            user?._id ?  <Dashboard/> : <LogIn/>
             }
         </div>
     )

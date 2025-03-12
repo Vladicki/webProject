@@ -8,7 +8,7 @@ dotenv.config();
 
 //takes in the user ID in order to create a token
 const createToken = (_id)=>{
-    return jwt.sign({_id},process.env.JWT_SECRET,{expiresIn:"1d"});
+    return jwt.sign({_id},"harshsdarksecret",{expiresIn:"1d"});
 }
 
 

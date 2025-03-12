@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+    const {user, logout} = useAuth();
+    // console.log(user)
     return (
         <header className="bg-blue-600 p-4 shadow-md">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -8,9 +11,13 @@ const Navbar = () => {
                     Dashboard
                 </Link>
                 <div className="flex space-x-6">
-                    <Link to="/login" className="text-white text-lg font-medium hover:text-blue-200">
-                        Log In/Sign Up
-                    </Link>
+                    {
+                        user?._id ? ( <button onClick={logout}>Logout</button>) : (
+                            <Link to="/login" className="text-white text-lg font-medium hover:text-blue-200">
+                            Log In/Sign Up
+                        </Link>
+                        )
+                    }
                 </div>
             </div>
         </header>
