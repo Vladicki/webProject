@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContextProvider } from './context/AuthContext';
-import Home from './pages/Home';
-import LogIn from './components/LogIn';
-import Navbar from './components/Navbar'
+import { AuthContextProvider } from './context/AuthContext.jsx';
+import Home from './pages/Home.jsx';
+import LogIn from './components/LogIn.jsx';
+import Navbar from './components/Navbar.jsx'
 
 function App() {
 

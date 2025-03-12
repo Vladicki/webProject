@@ -32,7 +32,7 @@ const Dashboard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5050/api/resumes/create", formData);
+            const response = await axios.post("http://localhost:4000/api/resumes/create", formData);
             console.log("Resume saved:", response.data);
             alert("Resume Created Successfully!");
         } catch (error) {
@@ -108,5 +108,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-  
