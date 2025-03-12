@@ -1,51 +1,52 @@
-
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
     const [isSignUp, setIsSignUp] = useState(false);
-    const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    const {user, logout} = useAuth()
+    const { user } = useAuth();
+    const navigate = useNavigate();
 
+    // Redirect to dashboard if already logged in
+    useEffect(() => {
+        if (user) {
+            navigate("/dashboard");
+        }
+    }, [user, navigate]);
 
-
-
-    // Function to handle sign-up
     const handleSignup = async (e) => {
         e.preventDefault();
-        console.log(email, username, password);
         try {
             const response = await axios.post("http://localhost:4000/api/users/signup", {
                 name: username,
                 email,
-                password
+                password,
             });
 
             console.log("Signup Success:", response.data);
+            localStorage.setItem("token", response.data.token);
             window.location.href = "/";  // Redirect on success
         } catch (error) {
             console.error("Signup Error:", error.response?.data || error.message);
         }
     };
 
-    // Function to handle login
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log(email, password);
         try {
             const response = await axios.post("http://localhost:4000/api/users/login", {
                 email,
-                password
+                password,
             });
 
             console.log("Login Success:", response.data);
-            localStorage.setItem("token", response.data.token); // Save token for authentication
+            localStorage.setItem("token", response.data.token);
             window.location.href = "/";  // Redirect on success
         } catch (error) {
             console.error("Login Error:", error.response?.data || error.message);
@@ -58,16 +59,21 @@ const LogIn = () => {
                 <SignUpForm 
                     handler={handleSignup} 
                     setIsSignUp={setIsSignUp} 
+                    email={email} 
                     setEmail={setEmail} 
+                    username={username} 
                     setUsername={setUsername} 
+                    password={password} 
                     setPassword={setPassword} 
                 />
             ) : (
                 <LogInForm 
-                    handler={handleLogin}  // Fixed: changed from handleSubmit to handleLogin
+                    handler={handleLogin} 
                     setIsSignUp={setIsSignUp} 
-                    setPassword={setPassword} 
+                    email={email} 
                     setEmail={setEmail} 
+                    password={password} 
+                    setPassword={setPassword} 
                 />
             )}
         </div>
@@ -75,7 +81,7 @@ const LogIn = () => {
 };
 
 // Login Form Component
-const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
+const LogInForm = ({ handler, setIsSignUp, email, setEmail, password, setPassword }) => {
     return (
         <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-center">Log in</h2>
@@ -83,6 +89,7 @@ const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail:</label>
                 <input
                     type="text"
+                    value={email} // Bind state value
                     onChange={(e) => setEmail(e.target.value)}
                     id="email"
                     name="email"
@@ -94,6 +101,7 @@ const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
                 <input
                     type="password"
+                    value={password} // Bind state value
                     onChange={(e) => setPassword(e.target.value)}
                     id="password"
                     name="password"
@@ -101,15 +109,15 @@ const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                 />
             </div>
-            <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
                 Log in
             </button>
             <p className="text-center text-sm text-gray-600">
-                New to CV Builder? 
+                New to CV Builder?{" "}
                 <button 
                     type="button" 
-                    onClick={() => setIsSignUp(false)} 
-                    className="text-blue-500 hover:text-blue-700 focus:outline-none">
+                    onClick={() => setIsSignUp(true)} // Fixed: Now correctly switches to Sign-Up
+                    className="text-blue-500 hover:text-blue-700">
                     Sign up
                 </button>
             </p>
@@ -117,9 +125,8 @@ const LogInForm = ({ handler, setIsSignUp, setEmail, setPassword }) => {
     );
 };
 
-
 // Sign-Up Form Component
-const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }) => {
+const SignUpForm = ({ handler, setIsSignUp, email, setEmail, username, setUsername, password, setPassword }) => {
     return (
         <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 text-center">Sign up</h2>
@@ -127,6 +134,7 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username:</label>
                 <input
                     type="text"
+                    value={username} // Bind state value
                     onChange={(e) => setUsername(e.target.value)}
                     id="username"
                     name="username"
@@ -138,6 +146,7 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
                 <input
                     type="email"
+                    value={email} // Bind state value
                     onChange={(e) => setEmail(e.target.value)}
                     id="email"
                     name="email"
@@ -149,6 +158,7 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
                 <input
                     type="password"
+                    value={password} // Bind state value
                     onChange={(e) => setPassword(e.target.value)}
                     id="password"
                     name="password"
@@ -158,15 +168,15 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
             </div>
             <button
                 type="submit"
-                className="w-full py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
+                className="w-full py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
             >
                 Sign Up
             </button>
             <p className="mt-4 text-center text-sm">
-                Returning user?{' '}
+                Returning user?{" "}
                 <button
                     type="button"
-                    onClick={() => setIsSignUp(true)}
+                    onClick={() => setIsSignUp(false)} // Fixed: Now correctly switches to Log-In
                     className="text-blue-500 hover:underline"
                 >
                     Log in
@@ -175,6 +185,5 @@ const SignUpForm = ({ handler, setIsSignUp, setEmail, setUsername, setPassword }
         </form>
     );
 };
-
 
 export default LogIn;
