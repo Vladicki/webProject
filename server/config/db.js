@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 
 //this method connects to the project's MangoDB database.
@@ -7,10 +7,7 @@ import dotenv from 'dotenv';
 const MONGO_URI = "mongodb+srv://desmondmonotone:WebTechnology@projectcluster.66fct.mongodb.net/test"
 export const connectDB = async () => {
     try {
-        await mongoose.connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(MONGO_URI);
         console.log('MongoDB connected successfully');
     } catch (err) {
         console.error('MongoDB connection error:', err);
