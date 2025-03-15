@@ -1,5 +1,6 @@
 import CreateResume from "./CreateResume";
 import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
 
 const Dashboard = () => {
     const {user, logout} = useAuth();

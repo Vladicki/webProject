@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { connectDB } from './server/config/db.js';
-import User from './server/models/user.model.js';
-import userRoutes from './server/routes/users.js';
-import resumeRoutes from './server/routes/resumes.js';
+import { connectDB } from './config/db.js';
+import User from './models/user.model.js';
+import userRoutes from './routes/users.js';
+import resumeRoutes from './routes/resumes.js';
 
 // import cors from "cors";
  
