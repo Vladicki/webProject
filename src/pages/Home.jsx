@@ -1,11 +1,16 @@
 import Dashboard from "../components/Dashboard";
-
+import LogIn from "../components/LogIn";
+import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
+    const {user, logout} = useAuth();
 
     return (
         <div className="home">
-            <Dashboard/>
+            {
+            //check if user has logged in 
+            user?._id ?  <Dashboard/> : <LogIn/>
+            }
         </div>
     )
 }

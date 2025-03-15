@@ -17,14 +17,18 @@ const app = express();
 const PORT = 4000;
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+//app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 // requests ending in /api/users will be directed to user-related functions like sign-up and login
 app.use('/api/users',userRoutes);
 //requests ending in /api/resumes will be directed to resume CRUD functions
 app.use('/api/resumes',resumeRoutes);
+
+//test command to check that the server's up
+app.use('/api/ping',(req,res)=>{res.send("Ping! I'm alive!")});
+
 
 app.get("/connect_db_test_route", async(req, res, next)=>{
     // await connectDB();

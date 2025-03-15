@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContextProvider } from './context/AuthContext.jsx';
-import Home from './pages/Home.jsx';
-import LogIn from './components/LogIn.jsx';
-import Navbar from './components/Navbar.jsx'
+import { AuthContextProvider } from './context/AuthContext';
+import Home from './pages/Home';
+import LogIn from './components/LogIn';
+import Navbar from './components/Navbar'
+import Resumes from './components/Resumes';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <div className="pages">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/resumes" element={<Resumes />} />
               <Route path="/login" element={<LogIn/>}/>
             </Routes>
           </div>
