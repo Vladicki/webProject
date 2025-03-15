@@ -29,6 +29,7 @@ app.use('/api/resumes',resumeRoutes);
 //test command to check that the server's up
 app.use('/api/ping',(req,res)=>{res.send("Ping! I'm alive!")});
 
+
 app.get("/connect_db_test_route", async(req, res, next)=>{
     // await connectDB();
     console.log("Hello")
