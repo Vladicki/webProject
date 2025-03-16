@@ -14,7 +14,7 @@ dotenv.config();
 
 //create an express app and define the port
 const app = express();
-const PORT = 4000;
+const PORT =  process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
@@ -42,6 +42,8 @@ app.get("/connect_db_test_route", async(req, res, next)=>{
     console.log(user)
     res.send("<h1>Hello from harsh!</h1>")
 })
+
+app.get("/",(req,res)=>{res.send(console.log(`Web Project server currentlh hosted at: ${PORT}`))})
 
 //start server
 app.listen(PORT,()=>{

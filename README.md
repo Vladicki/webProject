@@ -1,12 +1,7 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CV Builder
+This is a web development project by Harsh, Vladick, Quentin and Ruslan. We made a website that allows users to create and to view CVs. For the backend, we used MongoDB as our database and using Express.js to connect it to Node. The server is hosted using Heroku on this URL: https://griffith-webproject-server-8398a1bf085d.herokuapp.com/
 
-Currently, two official plugins are available:
+# Division of Labour
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+All work was split evenly.
