@@ -1,10 +1,12 @@
 import { React, useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext';
 import { ResumeFormat } from './ResumeFormat';
+import { useNavigate } from "react-router-dom";
 
 const Resumes = () => {
     const {user,logout} = useAuth();
     const [resumes, setResumes] = useState(null);
+    const navigate = useNavigate();  
     //const testId = "67c7086c2aa680e7e7a6567b";
     useEffect(() => {
         async function fetchResumes(){
@@ -21,7 +23,15 @@ const Resumes = () => {
     }, [])
 
     if (resumes === null) {
-        return <div>Loading</div>; 
+        return <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg"> 
+        <div>Sign-In to show your uploaded resumes</div>
+        <button 
+            className="w-full py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+            onClick={() => navigate("/login")} 
+        >
+            Log In/Sign Up
+        </button>
+        </div>
     }
     
     return (
