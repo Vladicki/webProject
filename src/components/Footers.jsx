@@ -11,7 +11,7 @@ function Footer() {
 
         {/* Middle Section - Links */}
         <div className="flex space-x-6 my-4 md:my-0">
-          <Link to="/Dashbaord" className="hover:text-gray-400 transition">Dashboard</Link>
+          <Link to="/" className="hover:text-gray-400 transition">Dashboard</Link>
           <Link to="/resumes" className="hover:text-gray-400 transition">Resumes</Link>
           <Link to="/login" className="hover:text-gray-400 transition">Log In</Link>
         </div>

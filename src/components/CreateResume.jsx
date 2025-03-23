@@ -28,19 +28,35 @@ const CreateResume = () => {
         }
     };
 
-    // Handle form submission
+    // // Handle form submission
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await axios.post("http://localhost:4000/api/resumes/create", formData);
+    //         console.log("Resume saved:", response.data);
+    //         alert("Resume Created Successfully!");
+    //         //navigate user to resumes page once resume is created successfully
+    //         navigate("/resumes");
+    //     } catch (error) {
+    //         console.error("Error saving resume:", error.response?.data || error.message);
+    //     }
+    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:4000/api/resumes/create", formData);
+            const response = await axios.post(
+                "http://localhost:4000/api/resumes/create", 
+                formData,
+                { withCredentials: true } // ✅ Ensures cookies are sent if needed
+            );
             console.log("Resume saved:", response.data);
             alert("Resume Created Successfully!");
-            //navigate user to resumes page once resume is created successfully
             navigate("/resumes");
         } catch (error) {
             console.error("Error saving resume:", error.response?.data || error.message);
         }
     };
+    
 
     return (
         <div className="createResume max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
