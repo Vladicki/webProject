@@ -23,7 +23,7 @@ const LogIn = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:4000/api/users/signup", {
+            const response = await axios.post("https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/users/signup", {
                 name: username,
                 email,
                 password,
@@ -40,7 +40,7 @@ const LogIn = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:4000/api/users/login", {
+            const response = await axios.post("https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/users/login", {
                 email,
                 password,
             });
