@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white h-77 flex flex-col justify-center">
+    <footer className="bg-gray-900 text-white h-40 flex flex-col justify-center">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         {/* Left Section - Branding */}
         <div className="text-lg font-semibold">
@@ -28,6 +28,11 @@ function Footer() {
             <i className="fab fa-github"></i>
           </a>
         </div>
+      </div>
+
+      {/* Just our names */}
+      <div className="text-center text-sm text-gray-400">
+        Quentin Laumonier | Harsh Patel | Vladick Iurev | Dezzy
       </div>
 
       {/* Bottom Text */}
