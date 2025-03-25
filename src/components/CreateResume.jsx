@@ -44,10 +44,10 @@ const CreateResume = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            console.log(formData);
             const response = await axios.post(
                 "https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/resumes/create", 
                 formData,
-                { withCredentials: true } // ✅ Ensures cookies are sent if needed
             );
             console.log("Resume saved:", response.data);
             alert("Resume Created Successfully!");

@@ -31,6 +31,7 @@ const LogIn = () => {
 
             console.log("Signup Success:", response.data);
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("userId", response.data.userId);
             window.location.href = "/";  // Redirect on success
         } catch (error) {
             console.error("Signup Error:", error.response?.data || error.message);
@@ -47,6 +48,7 @@ const LogIn = () => {
 
             console.log("Login Success:", response.data);
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("userId", response.data.userId);
             window.location.href = "/";  // Redirect on success
         } catch (error) {
             console.error("Login Error:", error.response?.data || error.message);
