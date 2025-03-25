@@ -45,7 +45,7 @@ const CreateResume = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/resumes/create", 
+                "https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/resumes/create", 
                 formData,
                 { withCredentials: true } // ✅ Ensures cookies are sent if needed
             );
