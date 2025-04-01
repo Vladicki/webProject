@@ -59,7 +59,7 @@ const CreateResume = () => {
     
 
     return (
-        <div className="createResume max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <div className="createResume max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-black m-8">
             <h2 className="text-3xl font-semibold text-center mb-6">Create a Resume</h2>
             <form onSubmit={handleSubmit}>
                 {/* Title Section */}

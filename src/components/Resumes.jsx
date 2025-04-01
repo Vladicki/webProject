@@ -36,8 +36,8 @@ const Resumes = () => {
     
     return (
         <div>
-            <h1>Your Resumes</h1>
-            <div className="resume-list max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+            <h1 className="text-3xl text-center">Your Resumes</h1>
+            <div className="resume-list max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg text-center border border-black m-8">
                 {resumes.map((resume)=>(
                     <ResumeFormat resume={resume} />
                 ))}
