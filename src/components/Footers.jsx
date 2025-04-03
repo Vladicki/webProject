@@ -21,7 +21,7 @@ function Footer() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    checkPageHeight(); // Vérifier au chargement
+    checkPageHeight();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,7 +29,7 @@ function Footer() {
   return (
     <footer
       className={`w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-opacity duration-500 ${
-        isShortPage || isVisible ? "opacity-100 relative" : "opacity-0 pointer-events-none fixed bottom-0 left-0"
+        isShortPage || isVisible ? "opacity-100 relative" : "fixed bottom-0 left-0 opacity-0 pointer-events-none"
       }`}
     >
       {/* <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"> */}
