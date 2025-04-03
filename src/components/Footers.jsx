@@ -55,7 +55,7 @@ function Footer() {
 
       {/* Just our names */}
       <div className="text-center text-sm text-gray-400">
-        Quentin Laumonier | Harsh Patel | Vladick Iurev | Dezzy
+        Quentin Laumonier | Harsh Patil | Vladick Iurev | Dezzy
       </div>
 
       {/* Bottom Text */}
