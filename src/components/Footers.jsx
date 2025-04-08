@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
   const [isShortPage, setIsShortPage] = useState(false);
 
   useEffect(() => {
@@ -13,23 +12,16 @@ function Footer() {
       setIsShortPage(pageHeight <= windowHeight);
     };
 
-    const handleScroll = () => {
-      const scrollPosition = window.innerHeight + window.scrollY;
-      const pageHeight = document.documentElement.scrollHeight;
-
-      setIsVisible(scrollPosition >= pageHeight - 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
     checkPageHeight();
+    window.addEventListener("resize", checkPageHeight);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("resize", checkPageHeight);
   }, []);
   
   return (
     <footer
-      className={`w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-opacity duration-500 ${
-        isShortPage || isVisible ? "opacity-100 relative" : "fixed bottom-0 left-0 opacity-0 pointer-events-none"
+      className={`w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-all duration-500 ${
+        isShortPage ? "fixed bottom-0 left-0" : "relative"
       }`}
     >
       {/* <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"> */}
