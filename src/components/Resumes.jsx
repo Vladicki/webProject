@@ -10,6 +10,10 @@ const Resumes = () => {
     //const testId = "67c7086c2aa680e7e7a6567b";
     useEffect(() => {
         async function fetchResumes(){
+        if (!user || !user._id) {
+            console.log("User is not authenticated or user ID is missing.");
+            return;  // Early exit if user is null or doesn't have an _id
+        }
             const response = await fetch(`https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/resumes/user/${user._id}`);
             const json = await response.json();
             if(response.ok){
