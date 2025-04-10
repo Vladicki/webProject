@@ -40,8 +40,9 @@ const LogIn = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        // "https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/users/login"
         try {
-            const response = await axios.post("https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/users/login", {
+            const response = await axios.post("http://localhost:4000/api/users/login", {
                 email,
                 password,
             });
