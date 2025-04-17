@@ -57,7 +57,7 @@ const LogIn = () => {
     };
 
     return (
-        <div className="LogIn m-8">
+        <div className="LogIn m-20">
             {isSignUp ? (
                 <SignUpForm 
                     handler={handleSignup} 

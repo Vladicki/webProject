@@ -2,27 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
-  const [isShortPage, setIsShortPage] = useState(false);
-
-  useEffect(() => {
-    const checkPageHeight = () => {
-      const windowHeight = window.innerHeight;
-      const pageHeight = document.documentElement.scrollHeight;
-
-      setIsShortPage(pageHeight <= windowHeight);
-    };
-
-    checkPageHeight();
-    window.addEventListener("resize", checkPageHeight);
-
-    return () => window.removeEventListener("resize", checkPageHeight);
-  }, []);
-  
   return (
     <footer
-      className={`w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-all duration-500 ${
-        isShortPage ? "fixed bottom-0 left-0" : "relative"
-      }`}
+      className={"w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-all duration-500 bottom-0 padding-0"}
     >
       {/* <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"> */}
         {/* Left Section - Branding */}
