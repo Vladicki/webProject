@@ -2,8 +2,6 @@ import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv';
-import { getRegistrationEmail } from '../utils/emailTemplates.js';
-import { sendMail } from '../utils/sendMails.js';
 
 
 dotenv.config();
@@ -35,7 +33,6 @@ const signUpUser = async (req, res) => {
     try {
         const user = await User.signUp(name, email, password);
         const userId = user._id;
-        sendMail(email, "Welcome to our website", getRegistrationEmail(name, email));
         const token = createToken(user._id);
         res.status(200).json({userId,token});
     } catch (error) {

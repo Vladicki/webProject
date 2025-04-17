@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../helpers/axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +23,7 @@ const LogIn = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:4000/api/users/signup", {
+            const response = await axios.post("api/users/login", {
                 name: username,
                 email,
                 password,
@@ -42,7 +42,7 @@ const LogIn = () => {
         e.preventDefault();
         // "https://griffith-webproject-server-8398a1bf085d.herokuapp.com/api/users/login"
         try {
-            const response = await axios.post("http://localhost:4000/api/users/login", {
+            const response = await axios.post("api/users/login", {
                 email,
                 password,
             });
