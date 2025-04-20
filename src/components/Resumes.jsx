@@ -40,7 +40,7 @@ const Resumes = () => {
 
     return (
         <div>
-            <h1 className="text-3xl text-center">Your Resumes</h1>
+            <h1 className="text-3xl text-center m-5">Your Resumes</h1>
             <div className="resume-list max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-black m-8">
                 {/*2 columns for smaller devices and 3 for bigger devices*/}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -77,16 +77,16 @@ export const ResumeEditor = ({ resumeData,formData,setFormData }) => {
     return (
         <>
             <div className="header mb-6">
-                <h1 className="text-2xl font-bold">{resumeData.title}</h1>
+                <h1 className="text-2xl font-bold p-1 border border-gray-300 rounded-lg inline-block">{resumeData.title}</h1>
                 <input
-                    className="text-gray-700 block w-full mb-2"
+                    className="text-gray-700 block w-full mb-2 p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                     type="text"
                     name="description"
                     onChange={handleChange}
                     defaultValue={resumeData.description}
                 />
                 <input
-                    className="text-gray-500 block w-full"
+                    className="text-gray-500 block w-full p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                     type="text"
                     name="summary"
                     onChange={handleChange}
@@ -98,9 +98,9 @@ export const ResumeEditor = ({ resumeData,formData,setFormData }) => {
                 <h2 className="text-xl font-semibold mb-2">Experience</h2>
                 {resumeData.experience?.map((company, index) => (
                     <div className="mb-4" key={index}>
-                        <h3 className="font-semibold">{company.company}</h3>
+                        <h3 className="font-semibold p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block">{company.company}</h3>
                         <input
-                            className="italic block w-full mb-1"
+                            className="italic block w-full mb-1 p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                             type="text"
                             name="role"
                             onChange={(e) => handleChange(e, "experience", index)}
@@ -124,7 +124,7 @@ export const ResumeEditor = ({ resumeData,formData,setFormData }) => {
                             />
                         </div>
                         <input
-                            className="block w-full"
+                            className="block w-full p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                             type="text"
                             name="description"
                             onChange={(e) => handleChange(e, "experience", index)}
@@ -138,9 +138,9 @@ export const ResumeEditor = ({ resumeData,formData,setFormData }) => {
                 <h2 className="text-xl font-semibold mb-2">Education</h2>
                 {resumeData.education?.map((edu, index) => (
                     <div className="mb-4" key={index}>
-                        <h3 className="font-semibold">{edu.institution}</h3>
+                        <h3 className="font-semibold p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block">{edu.institution}</h3>
                         <input
-                            className="italic block w-full mb-1"
+                            className="italic block w-full mb-1 p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                             type="text"
                             name="degree"
                             defaultValue={edu.degree}
@@ -171,9 +171,9 @@ export const ResumeEditor = ({ resumeData,formData,setFormData }) => {
                 <h2 className="text-xl font-semibold mb-2">Custom Sections</h2>
                 {resumeData.customSections?.map((item, index) => (
                     <div className="mb-4" key={index}>
-                        <h3 className="font-semibold">{item.header}</h3>
+                        <h3 className="font-semibold p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block">{item.header}</h3>
                         <input
-                            className="block w-full"
+                            className="block w-full p-1 border border-gray-300 rounded-lg focus:ring-2 inline-block"
                             type="text"
                             name="description"
                             defaultValue={item.description}
@@ -231,7 +231,7 @@ const ResumeModal = ({ resumeData, setIsOpen }) => {
 
     const [editMode, setEditMode] = useState(false);
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-blue-200 z-50 flex items-center justify-center">
             <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-xl p-6 relative">
                 {/**edit button */}
                 {editMode ? <span>

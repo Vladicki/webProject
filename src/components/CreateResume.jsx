@@ -60,7 +60,7 @@ const CreateResume = () => {
 
 
     return (
-        <div className="createResume max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-black m-8">
+        <div className="createResume max-w-4xl mx-auto p-6 bg-blue-50 shadow-lg rounded-lg border border-black m-8">
             <h2 className="text-3xl font-semibold text-center mb-6">Create a Resume</h2>
             <form onSubmit={handleSubmit} >
                 <div className="grid gap-8 grid-cols-2">
@@ -74,7 +74,7 @@ const CreateResume = () => {
                                 value={formData.title}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                             />
                         </div>
 
@@ -85,7 +85,7 @@ const CreateResume = () => {
                                 name="description"
                                 value={formData.description}
                                 onChange={handleChange}
-                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                             />
                         </div>
 
@@ -96,7 +96,7 @@ const CreateResume = () => {
                                 name="summary"
                                 value={formData.summary}
                                 onChange={handleChange}
-                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                             />
                         </div>
 
@@ -110,7 +110,7 @@ const CreateResume = () => {
                                     placeholder="Company"
                                     value={exp.company}
                                     onChange={(e) => handleChange(e, "experience", index)}
-                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                                 <input
                                     type="text"
@@ -118,7 +118,7 @@ const CreateResume = () => {
                                     placeholder="Role"
                                     value={exp.role}
                                     onChange={(e) => handleChange(e, "experience", index)}
-                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                                 <div className="grid grid-cols-2 gap-4">
                                     <input
@@ -126,14 +126,14 @@ const CreateResume = () => {
                                         name="startDate"
                                         value={exp.startDate}
                                         onChange={(e) => handleChange(e, "experience", index)}
-                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                     />
                                     <input
                                         type="date"
                                         name="endDate"
                                         value={exp.endDate}
                                         onChange={(e) => handleChange(e, "experience", index)}
-                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                     />
                                 </div>
                                 <textarea
@@ -141,7 +141,7 @@ const CreateResume = () => {
                                     placeholder="Description"
                                     value={exp.description}
                                     onChange={(e) => handleChange(e, "experience", index)}
-                                    className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                             </div>
                         ))}
@@ -171,7 +171,7 @@ const CreateResume = () => {
                                     placeholder="Institution"
                                     value={edu.institution}
                                     onChange={(e) => handleChange(e, "education", index)}
-                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                                 <input
                                     type="text"
@@ -179,7 +179,7 @@ const CreateResume = () => {
                                     placeholder="Degree"
                                     value={edu.degree}
                                     onChange={(e) => handleChange(e, "education", index)}
-                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                                 <div className="grid grid-cols-2 gap-4">
                                     <input
@@ -187,14 +187,14 @@ const CreateResume = () => {
                                         name="startDate"
                                         value={edu.startDate}
                                         onChange={(e) => handleChange(e, "education", index)}
-                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                     />
                                     <input
                                         type="date"
                                         name="endDate"
                                         value={edu.endDate}
                                         onChange={(e) => handleChange(e, "education", index)}
-                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                     />
                                 </div>
                             </div>
@@ -222,14 +222,14 @@ const CreateResume = () => {
                                     placeholder="Header"
                                     value={section.header}
                                     onChange={(e) => handleChange(e, "customSections", index)}
-                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                                 <textarea
                                     name="description"
                                     placeholder="Description"
                                     value={section.description}
                                     onChange={(e) => handleChange(e, "customSections", index)}
-                                    className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full px-2 py-1 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                                 />
                             </div>
                         ))}

@@ -57,9 +57,9 @@ const LogIn = () => {
     };
 
     return (
-        <div className="LogIn m-20">
+        <div className="bg-[url('/src/images_videos/background_login.jpg')] bg-[length:500px_500px] bg-no-repeat bg-right LogIn m-20">
             {isSignUp ? (
-                <SignUpForm 
+                <SignUpForm
                     handler={handleSignup} 
                     setIsSignUp={setIsSignUp} 
                     email={email} 
@@ -86,7 +86,7 @@ const LogIn = () => {
 // Login Form Component
 const LogInForm = ({ handler, setIsSignUp, email, setEmail, password, setPassword }) => {
     return (
-        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
+        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-blue-50 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-center">Log in</h2>
             <div className="space-y-2">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail:</label>
@@ -97,7 +97,7 @@ const LogInForm = ({ handler, setIsSignUp, email, setEmail, password, setPasswor
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
                 />
             </div>
             <div className="space-y-2">
@@ -109,7 +109,7 @@ const LogInForm = ({ handler, setIsSignUp, email, setEmail, password, setPasswor
                     id="password"
                     name="password"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
                 />
             </div>
             <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
@@ -131,7 +131,7 @@ const LogInForm = ({ handler, setIsSignUp, email, setEmail, password, setPasswor
 // Sign-Up Form Component
 const SignUpForm = ({ handler, setIsSignUp, email, setEmail, username, setUsername, password, setPassword }) => {
     return (
-        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <form onSubmit={handler} className="max-w-md mx-auto p-6 bg-blue-50 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 text-center">Sign up</h2>
             <div className="mb-4">
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username:</label>
@@ -142,7 +142,7 @@ const SignUpForm = ({ handler, setIsSignUp, email, setEmail, username, setUserna
                     id="username"
                     name="username"
                     required
-                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
                 />
             </div>
             <div className="mb-4">
@@ -154,7 +154,7 @@ const SignUpForm = ({ handler, setIsSignUp, email, setEmail, username, setUserna
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
                 />
             </div>
             <div className="mb-4">
@@ -166,7 +166,7 @@ const SignUpForm = ({ handler, setIsSignUp, email, setEmail, username, setUserna
                     id="password"
                     name="password"
                     required
-                    className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
                 />
             </div>
             <button
