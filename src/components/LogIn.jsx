@@ -57,7 +57,7 @@ const LogIn = () => {
     };
 
     return (
-        <div className="bg-[url('/src/images_videos/background_login.jpg')] bg-[length:500px_500px] bg-no-repeat bg-right LogIn m-20">
+        <div className="bg-[url('/images_videos/background_login.jpg')] bg-[length:500px_500px] bg-no-repeat bg-right LogIn m-20">
             {isSignUp ? (
                 <SignUpForm
                     handler={handleSignup} 

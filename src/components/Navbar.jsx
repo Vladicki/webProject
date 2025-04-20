@@ -13,7 +13,7 @@ const Navbar = () => {
                 playsInline
                 className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
             >
-                <source src="/src/images_videos/background_navbar.mp4" type="video/mp4" />
+                <source src="/images_videos/background_navbar.mp4" type="video/mp4" />
             </video>
 
             <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-6 z-10">
