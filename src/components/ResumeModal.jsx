@@ -6,12 +6,14 @@ import { useNavigate } from 'react-router-dom'
 export const ResumeInfo = ({ resumeData }) => {
     return (
         <>
+            {/*header */}
             <div className="header mb-6">
                 <h1 className="text-2xl font-bold">{resumeData.title}</h1>
                 <p className="text-gray-700">{resumeData.description}</p>
                 <p className="text-gray-500">{resumeData.summary}</p>
             </div>
 
+            {/*experience */}
             <div className="experience mb-6">
                 <h2 className="text-xl font-semibold mb-2">Experience</h2>
                 {resumeData.experience?.map((company) => (
@@ -26,6 +28,7 @@ export const ResumeInfo = ({ resumeData }) => {
                 ))}
             </div>
 
+             {/*education */}   
             <div className="education mb-6">
                 <h2 className="text-xl font-semibold mb-2">Education</h2>
                 {resumeData.education?.map((edu) => (
@@ -39,6 +42,7 @@ export const ResumeInfo = ({ resumeData }) => {
                 ))}
             </div>
 
+            {/*custom sections */}
             <div className="custom_sections">
                 <h2 className="text-xl font-semibold mb-2">Other</h2>
                 {resumeData.customSections?.map((item) => (
