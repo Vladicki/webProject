@@ -4,21 +4,8 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer
-      className={"w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-all duration-500 bottom-0 padding-0"}
+      className={"w-full bg-gray-900 text-white h-40 flex flex-col justify-center transition-all duration-500"}
     >
-      {/* <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"> */}
-        {/* Left Section - Branding */}
-        {/* <div className="text-lg font-semibold">
-          <Link to="/" className="hover:text-gray-400 transition"></Link>
-        </div> */}
-
-        {/* Middle Section - Links */}
-        {/* <div className="flex space-x-6 my-4 md:my-0">
-          <Link to="/" className="hover:text-gray-400 transition">Dashboard</Link>
-          <Link to="/resumes" className="hover:text-gray-400 transition">Resumes</Link>
-          <Link to="/login" className="hover:text-gray-400 transition">Log In</Link>
-        </div> */}
-      {/* </div> */}
 
       {/* Social Media Icons */}
       <div className="text-center text-sm">
