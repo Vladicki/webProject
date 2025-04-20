@@ -146,7 +146,9 @@ const CreateResume = () => {
                             </div>
                         ))}
 
-                        <Button onClick={() =>
+                        <Button onClick={(e) =>
+                        {
+                            e.preventDefault();
                             setFormData({
                                 ...formData,
                                 experience: [
@@ -154,6 +156,7 @@ const CreateResume = () => {
                                     { company: "", role: "", startDate: "", endDate: "", description: "" },
                                 ],
                             })
+                        }
                         }>
                             Add Experience
                         </Button>
@@ -200,7 +203,8 @@ const CreateResume = () => {
                             </div>
                         ))}
 
-                        <Button onClick={() =>
+                        <Button onClick={(e) =>
+                        {e.preventDefault();
                             setFormData({
                                 ...formData,
                                 education: [
@@ -208,6 +212,7 @@ const CreateResume = () => {
                                     { institution: "", degree: "", startDate: "", endDate: "" },
                                 ],
                             })
+                        }
                         }>
                             Add Education
                         </Button>
@@ -234,7 +239,9 @@ const CreateResume = () => {
                             </div>
                         ))}
 
-                        <Button onClick={() =>
+                        <Button onClick={(e) =>
+                        {
+                            e.preventDefault();
                             setFormData({
                                 ...formData,
                                 customSections: [
@@ -242,6 +249,7 @@ const CreateResume = () => {
                                     { header:"",description:"" },
                                 ],
                             })
+                        }
                         }>
                             Add Custom Section
                         </Button>
