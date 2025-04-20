@@ -60,7 +60,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h1 className="text-3xl text-center">Dashboard</h1>
+            <h1 className="text-3xl text-center m-5">Dashboard</h1>
             <p>Logged in as user: {user._id}</p>
             <CreateResume userId={user._id} />
         </div>
