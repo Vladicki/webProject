@@ -27,7 +27,7 @@ const Resumes = () => {
     }, [])
 
     if (resumes === null) {
-        return <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+        return <div className="max-w-md mx-auto p-6 bg-blue-50 shadow-lg rounded-lg m-10">
             <div>Sign-In to show your uploaded resumes</div>
             <button
                 className="w-full py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"

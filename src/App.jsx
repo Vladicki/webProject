@@ -9,16 +9,16 @@ import Footers from './components/Footers';  // Import Footer
 function App() {
   return (
     <AuthContextProvider>
-      <div className="App">
+      <div className="flex flex-col min-h-screen"> {/* Full screen height */}
         <BrowserRouter>
           <Navbar />
-          <div className="pages">
+          <main className="flex-grow"> {/* Main content grows to fill space */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/resumes" element={<Resumes />} />
               <Route path="/login" element={<LogIn />} />
             </Routes>
-          </div>
+          </main>
           <Footers /> {/* Add Footer here */}
         </BrowserRouter>
       </div>
