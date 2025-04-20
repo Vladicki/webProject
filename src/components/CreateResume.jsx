@@ -237,9 +237,9 @@ const CreateResume = () => {
                         <Button onClick={() =>
                             setFormData({
                                 ...formData,
-                                education: [
-                                    ...formData.education,
-                                    { institution: "", degree: "", startDate: "", endDate: "" },
+                                customSections: [
+                                    ...formData.customSections,
+                                    { header:"",description:"" },
                                 ],
                             })
                         }>
